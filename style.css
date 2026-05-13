@@ -1,61 +1,47 @@
-/* Add this to your existing style.css */
-
-.voice-note-container {
-    margin: 30px auto;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.heart-icon {
-    font-size: 50px;
-    animation: beat 1s infinite;
-}
-
-@keyframes beat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-.photo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.photo-card {
-    background: white;
+/* Glassmorphism Effect */
+.polaroid {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    max-width: 250px;
-    transition: transform 0.3s;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: rotate(-3deg); /* Slight tilt for a 'handmade' feel */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 300px;
+    margin: 50px auto;
 }
 
-.photo-card:hover {
-    transform: translateY(-10px);
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
 }
 
-.photo-card img {
-    width: 100%;
-    border-radius: 5px;
+/* Glowing Text */
+.glow-text {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px #ffafbd;
+    animation: fadeIn 2s ease-in;
 }
 
-/* Falling Hearts Animation */
-.heart-particle {
-    position: fixed;
-    top: -10%;
-    font-size: 20px;
-    user-select: none;
-    pointer-events: none;
-    z-index: 9999;
-    animation: fall linear forwards;
+/* Custom Signature */
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #b22222;
+    margin-top: 20px;
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
+/* Smooth Background Gradient */
+#main-content {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
