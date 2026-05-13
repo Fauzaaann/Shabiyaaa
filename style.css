@@ -1,0 +1,61 @@
+/* Add this to your existing style.css */
+
+.voice-note-container {
+    margin: 30px auto;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.heart-icon {
+    font-size: 50px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.photo-card {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    max-width: 250px;
+    transition: transform 0.3s;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px);
+}
+
+.photo-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Falling Hearts Animation */
+.heart-particle {
+    position: fixed;
+    top: -10%;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
